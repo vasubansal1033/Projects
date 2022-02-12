@@ -1,1 +1,1 @@
-You can play the game at : vasu-asteroidgame.netlify.app
+You can play the game at : https://vasu-asteroidgame.netlify.app/
