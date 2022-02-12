@@ -1,0 +1,10 @@
+Reason why we used setTimeout for splice
+Adding the fading out effect for particles
+
+reason why ${} was not working. Use back tick
+Multi-line template literals
+Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
+
+Template literals are enclosed by the back-tick (` `) (grave accent) character instead of double or single quotes. Template literals can contain place holders. These are indicated by the Dollar sign and curly braces (${expression}).
+
+TODO: add music

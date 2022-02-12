@@ -1,0 +1,4 @@
+1. Use 'npm install' to download dependencies if downloaded an online project.
+2. package.json contains the details of dependencies
+3. node_modules stores all the main dependencies and other ones.
+4. It's a big file so is typically excluded while uploading.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2 class="score">Score : <span>0</span></h2>
+
+    <!-- https://css-tricks.com/css3-progress-bars/ -->
+    <div class="container">
+        <div class="meter">
+            <span style="width: 100%"></span>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box_title">ASTEROIDS</div>
+        <button class="start btn">Start the Game!</button>
+        <button class="restart btn" style="display: none">Restart Game!</button>
+    </div>
+
+    <canvas class="board"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
