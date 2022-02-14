@@ -1,0 +1,14 @@
+Didn't know myArray = [1, 2, 3]
+myArray2 = myArray // shallow copy
+myArray3 = [...myArray] // deep copy
+
+Was manually removing from array
+got to know about filter
+using splice to remove first element of array
+but it wasnt working
+
+forgot to pass empty array while first parsing local storage
+JSON.parse(senfj) || []
+
+after implementing sorting for both rating and popularity
+didn't set the order variable of other one to 0.
