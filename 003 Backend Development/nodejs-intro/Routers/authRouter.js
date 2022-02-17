@@ -2,17 +2,17 @@ const express = require('express');
 const authRouter = express.Router();
 
 const jwt = require('jsonwebtoken');
-const {JWT_KEY} = require('../../secrets.js');
+const { JWT_KEY } = require('../../secrets.js');
 const userModel = require('../models/userModel');
 
 authRouter
-.route('/signup')
-.get(middleware1, getSignUp, middleware2)
-.post(postSignUp);
+    .route('/signup')
+    .get(middleware1, getSignUp, middleware2)
+    .post(postSignUp);
 
 authRouter
-.route('/login')
-.post(loginUser);
+    .route('/login')
+    .post(loginUser);
 
 /*
 req, res parameters gets passed between
@@ -26,7 +26,7 @@ function middleware1(req, res, next) {
 function middleware2(req, res, next) {
     console.log('middleware2 encountered');
     console.log('middleware2 ended req/res cycle')
-    res.sendFile('/public/index.html', {root: __dirname});
+    res.sendFile('/public/index.html', { root: __dirname });
     // next();
 }
 function getSignUp(req, res, next) {
@@ -47,19 +47,19 @@ async function postSignUp(req, res) {
     });
 }
 
-async function loginUser(req, res){
+async function loginUser(req, res) {
 
     try {
 
         let data = req.body;
 
-        if(data.email) {
+        if (data.email) {
             let user = await userModel.findOne({
                 email: data.email
             })
-            if(user) {
+            if (user) {
                 // bcrypt -> compare function
-                if(user.password==data.password) {
+                if (user.password == data.password) {
                     // res.cookie('isLoggedIn', true);
                     let uid = user['_id']; // uid
                     let token = jwt.sign({ // signature
@@ -73,13 +73,13 @@ async function loginUser(req, res){
                     return res.json({
                         message: 'user has logged in',
                         userDetails: data
-                        })
-                    } else {
-                        return res.json({
+                    })
+                } else {
+                    return res.json({
                         message: 'Credentials are wrong'
                     })
                 }
-                
+
             } else {
                 return res.json({
                     message: 'user not found'
@@ -90,13 +90,13 @@ async function loginUser(req, res){
                 message: "please enter an email id"
             })
         }
-        
-    } catch(err) {
+
+    } catch (err) {
         return res.status(500).json({
             message: err.message
         })
     }
-    
+
 }
 
 module.exports = authRouter;

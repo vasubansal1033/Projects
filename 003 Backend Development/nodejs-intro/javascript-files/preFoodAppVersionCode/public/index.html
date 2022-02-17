@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+        input[type=email],
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            font-size: 28px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        label {
+            font-size: 15px;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        button {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: rgb(10, 119, 13);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+
+        .cancel {
+            padding: 14px 20px;
+            background-color: #ff3d2f;
+        }
+
+        .formContainer {
+            padding: 16px;
+        }
+
+        .formContainer p {
+            font-size: 28px;
+        }
+    </style>
+
+<body>
+    <form>
+        <div class="formContainer">
+            <h1>Sign Up Form</h1>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="email">
+            <label><b>Name</b></label>
+            <input type="text">
+            <label for="password"><b>Password</b></label>
+            <input type="password">                            
+            <button>Sign Up</button>
+
+        </div>
+    </form>
+    <!-- axios fetch -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', async function(e){
+
+            e.preventDefault();
+
+            let email = document.querySelector("input[type='email']").value;
+            let name = document.querySelector("input[type='text']").value;
+            let password = document.querySelector("input[type='password']").value;
+
+            let resp = await axios.post('/auth/signup', {email, name, password});
+            console.log('resp', resp);
+        })
+    </script>
+</body>
+
+</html>

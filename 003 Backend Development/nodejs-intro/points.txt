@@ -2,3 +2,5 @@
 2. package.json contains the details of dependencies
 3. node_modules stores all the main dependencies and other ones.
 4. It's a big file so is typically excluded while uploading.
+5. res.sendFile gave error while including ../ because it considered it as malicious. Used path.resolve
+https://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error

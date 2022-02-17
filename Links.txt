@@ -1,0 +1,6 @@
+Express Routers and Mounting - https://www.youtube.com/watch?v=iM_S4RczozU
+Back tick vs quote - https://stackoverflow.com/questions/47067319/back-tick-vs-single-quote-in-js
+CORS - https://www.youtube.com/watch?v=4KHiSt0oLJ0
+JWT - https://jwt.io/introduction
+React Functional and class components - https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/
+React Middleware - https://expressjs.com/en/guide/using-middleware.html

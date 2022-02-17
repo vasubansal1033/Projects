@@ -1,2 +1,9 @@
 1. Postman clone - https://www.youtube.com/watch?v=g0gLojpleAg&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=63
 2. NextJS - https://www.youtube.com/watch?v=DZKOunP-WLQ&list=PLu0W_9lII9agtWvR_TZdb_r0dNI8-lDwG
+3. D3.js and Covid Racer - https://www.youtube.com/watch?v=vtNpbxgC_3E&t=306s
+4. Insta Reels clone - https://www.youtube.com/watch?v=JA_HSPaBY-Q&list=PL-Jc9J83PIiGMUa8fiBQepXdUsfM3hxZ9&index=7
+5. Burger Creator - https://www.youtube.com/watch?v=hs9C0iSnaNk
+
+1. Computer Networking - https://www.youtube.com/watch?v=P_gj_gw_fhQ&list=PL9zFgBale5fsO-ui9r_pmuDC3d2Oh9wWy
+Notes - https://github.com/8483/notes/blob/master/topics/networking.md
+2. Pepcoding OS - https://www.youtube.com/watch?v=c2ywNLeTllg&list=PL-Jc9J83PIiEKfEI9f7afzCutT_3hPQP3&index=7
