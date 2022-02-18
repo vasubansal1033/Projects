@@ -1,0 +1,4 @@
+1. npx create-react-app <name of app> (industry standard)
+2. cd into the project folder created
+    -> cd <name of app>
+    -> npm start
