@@ -4,6 +4,11 @@
 4. Insta Reels clone - https://www.youtube.com/watch?v=JA_HSPaBY-Q&list=PL-Jc9J83PIiGMUa8fiBQepXdUsfM3hxZ9&index=7
 5. Burger Creator - https://www.youtube.com/watch?v=hs9C0iSnaNk
 6. HTML/CSS Pepcoding playlist Projects - https://www.youtube.com/watch?v=Y5TeZB1IPPk&list=PL-Jc9J83PIiHU9RkY9sfh3G64-bd0ptvC&index=27
+7. Daniel stuts(Genetic algorithm game vala) - https://www.youtube.com/channel/UCORSpAcEfLWPRnbD2AAizSg/playlists
+	- Physics game engine, SocketIO multiplayer game etc
+8. Better chat app playlist - https://www.youtube.com/watch?v=oTTOyiwTO2Y&list=PLrwNNiB6YOA1a0_xXvogmvSHrLcanVKkF&index=1
+9. Pathfinder project - https://www.youtube.com/watch?v=msttfIHHkak, Sorting visualizer - https://www.youtube.com/watch?v=pFXYym4Wbkc
+10. Multiplayer 3D game - https://www.tutorialspoint.com/market/course/create-a-3d-multi-player-game-using-threejs-and-socketio/learn/111366/lecture.jsp
 
 1. Computer Networking - https://www.youtube.com/watch?v=P_gj_gw_fhQ&list=PL9zFgBale5fsO-ui9r_pmuDC3d2Oh9wWy
 Notes - https://github.com/8483/notes/blob/master/topics/networking.md
@@ -12,3 +17,7 @@ Notes - https://github.com/8483/notes/blob/master/topics/networking.md
 Linux Hackerrank challenges - 
 1. https://www.hackerrank.com/contests/text-processing-tools-in-linux/challenges
 2. https://www.hackerrank.com/contests/the-linux-bash-fest/challenges
+
+Delta exchange backup key :- YY57OOTXFYAFSWEG
+API Key :- PZOneo0CKNcRdMXHh8cHNUg3WLScsb
+API Secret:- 5coSPsyo19Xxs34ZMXnIw9Rggru2wPhG4DKRBIkFtBAEI69E1Q5konHeYy94
