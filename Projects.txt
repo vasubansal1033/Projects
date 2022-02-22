@@ -1,4 +1,8 @@
+DONE :-
 1. Postman clone - https://www.youtube.com/watch?v=g0gLojpleAg&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=63
+
+
+TODO :-
 2. NextJS - https://www.youtube.com/watch?v=DZKOunP-WLQ&list=PLu0W_9lII9agtWvR_TZdb_r0dNI8-lDwG
 3. D3.js and Covid Racer - https://www.youtube.com/watch?v=vtNpbxgC_3E&t=306s
 4. Insta Reels clone - https://www.youtube.com/watch?v=JA_HSPaBY-Q&list=PL-Jc9J83PIiGMUa8fiBQepXdUsfM3hxZ9&index=7
@@ -7,8 +11,13 @@
 7. Daniel stuts(Genetic algorithm game vala) - https://www.youtube.com/channel/UCORSpAcEfLWPRnbD2AAizSg/playlists
 	- Physics game engine, SocketIO multiplayer game etc
 8. Better chat app playlist - https://www.youtube.com/watch?v=oTTOyiwTO2Y&list=PLrwNNiB6YOA1a0_xXvogmvSHrLcanVKkF&index=1
-9. Pathfinder project - https://www.youtube.com/watch?v=msttfIHHkak, Sorting visualizer - https://www.youtube.com/watch?v=pFXYym4Wbkc
+9. Pathfinder project - https://www.youtube.com/watch?v=msttfIHHkak
+   Sorting visualizer - https://www.youtube.com/watch?v=pFXYym4Wbkc
 10. Multiplayer 3D game - https://www.tutorialspoint.com/market/course/create-a-3d-multi-player-game-using-threejs-and-socketio/learn/111366/lecture.jsp
+
+
+
+Javascript(Code with Harry) - https://www.youtube.com/watch?v=yIdA6HvUi_Q&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=65
 
 1. Computer Networking - https://www.youtube.com/watch?v=P_gj_gw_fhQ&list=PL9zFgBale5fsO-ui9r_pmuDC3d2Oh9wWy
 Notes - https://github.com/8483/notes/blob/master/topics/networking.md
