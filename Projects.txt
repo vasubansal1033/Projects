@@ -14,7 +14,7 @@ TODO :-
 9. Pathfinder project - https://www.youtube.com/watch?v=msttfIHHkak
    Sorting visualizer - https://www.youtube.com/watch?v=pFXYym4Wbkc
 10. Multiplayer 3D game - https://www.tutorialspoint.com/market/course/create-a-3d-multi-player-game-using-threejs-and-socketio/learn/111366/lecture.jsp
-
+11. Shopping Cart using Redux: https://www.youtube.com/watch?v=URBr_wEehbY&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
 
 
 Javascript(Code with Harry) - https://www.youtube.com/watch?v=yIdA6HvUi_Q&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=65
@@ -26,6 +26,9 @@ Notes - https://github.com/8483/notes/blob/master/topics/networking.md
 Linux Hackerrank challenges - 
 1. https://www.hackerrank.com/contests/text-processing-tools-in-linux/challenges
 2. https://www.hackerrank.com/contests/the-linux-bash-fest/challenges
+
+Different types of menu - https://www.youtube.com/watch?v=yoT29XK_-DA
+ThreeJS 16minute tutorial video - https://www.youtube.com/watch?v=Q7AOvWpIVHU
 
 Delta exchange backup key :- YY57OOTXFYAFSWEG
 API Key :- PZOneo0CKNcRdMXHh8cHNUg3WLScsb

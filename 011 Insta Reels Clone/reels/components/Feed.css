@@ -1,0 +1,87 @@
+.feed-container {
+    /* width: 100;
+    height: 10vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.nav-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.nav-icons{
+    margin: 0.75rem
+}
+.videos-container {
+    height: 75vh;
+    width: 50vh;
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px 5px #888888;
+    /* Add scroll bar to videos-container */
+    overflow-y: scroll;
+    scrollbar-width: 0;
+}
+/* hide the scroll bar */
+.videos-container::-webkit-scrollbar {
+    display: none;
+}
+.videos-info {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-container {
+    height: 75vh;
+    width: 50vh;
+    /* border: 1px solid black; */
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    /* box-shadow: 5px 5px 5px 5px #888888;  */
+}
+.post-container>video {
+    height: 75vh;
+    width: 50vh;
+    background-color: aqua;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+.avatar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 9rem;
+}
+.post-like {
+    width: 3.5rem;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.upload-button {
+    width: 15rem;
+    height: 10vh;
+}
+@media only screen and (max-width: 600px) {
+    .nav-icons {
+        display: none;
+    }
+}

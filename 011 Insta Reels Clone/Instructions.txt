@@ -1,0 +1,6 @@
+1. "npx create-next-app reels" for creating next app
+2. NextJS website is server side rendered. This also results in search engine optimization
+ReactJS website is client side rendered.
+3. File based routing.
+
+4. npm start -> npm run dev
