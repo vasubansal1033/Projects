@@ -66,7 +66,8 @@ function Signup() {
               name: name,
               email: email,
               uid: user.user.uid,
-              photoURL: downloadURL
+              photoURL: downloadURL,
+              posts: []
             }
             await setDoc(doc(db, 'users', user.user.uid), obj)
             console.log('doc uploaded')
@@ -90,8 +91,7 @@ function Signup() {
     } else {
       console.log('Not logged in')
     }
-
-  })
+  }, [user])
 
   return (
     <div className="signup-container">

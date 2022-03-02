@@ -6,18 +6,20 @@ export const AuthContext = React.createContext();
 
 function AuthWrapper({ children }) {
 
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        console.log(user)
+        // console.log(user)
         onAuthStateChanged(auth, (user) => {
-            // if(user) {
+            if(user) {
                 setUser(user);
-            // }
+            } else {
+                setUser('');
+            }
         })
         setLoading(false);
-    }, []);
+    }, [user]);
 
     function login(email, password) {
         return signInWithEmailAndPassword(auth, email, password);

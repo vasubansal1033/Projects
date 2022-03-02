@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react'
-import ProfileComp from '../components/profileComp'
-import { AuthContext } from '../context/auth';
+import React, { useContext, useState } from 'react'
+import ProfileComp from '../../components/profileComp'
+import { AuthContext } from '../../context/auth';
+import { auth } from '../../firebase';
 
-function Profile() {
+export default function Profile() {
 
   const { user } = useContext(AuthContext);
+
   const Redirect = () => {
     const router = useRouter();
     router.push('/login');
@@ -13,12 +15,10 @@ function Profile() {
   }
 
   return (
-    <div>
+    <div>      
       {
         user?.uid ? <ProfileComp /> : <Redirect />
       }
     </div>
   )
 }
-
-export default Profile

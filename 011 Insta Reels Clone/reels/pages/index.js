@@ -8,6 +8,7 @@ import { AuthContext } from '../context/auth.js';
 export default function Home() {
 
   const { user } = useContext(AuthContext);
+
   const Redirect = () => {
     const router = useRouter();
     router.push('/login');

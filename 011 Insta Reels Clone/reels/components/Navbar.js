@@ -22,10 +22,11 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import Router, { useRouter } from 'next/router';
+import { Link } from '@mui/material';
 
 const settings = ['Profile', 'Logout'];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({ userData }) => {
 
     const { logout } = React.useContext(AuthContext);
     const router = useRouter();
@@ -49,9 +50,14 @@ const ResponsiveAppBar = () => {
     };
 
     const handleLogout = async () => {
-        console.log(123);
         await logout();
         router.push('/login');
+    }
+    const redirectToProfile = () => {
+        router.push('/profile');
+    }
+    const redirectToHome = () => {
+        router.push('/');
     }
     return (
         <AppBar position="static" className="navbar">
@@ -78,11 +84,11 @@ const ResponsiveAppBar = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }} className="nav-icons-container">
-                        <HomeIcon fontSize='large' className='nav-icons' />
+                        <HomeIcon fontSize='large' className='nav-icons' onClick={redirectToHome} />
                         <ExploreIcon fontSize='large' className='nav-icons' />
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" sx={{ width: 56, height: 56, margin: "0.75rem" }} />
+                                <Avatar alt={userData?.name} src={userData?.photoURL} sx={{ width: 56, height: 56, margin: "0.75rem" }} />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -128,8 +134,8 @@ const ResponsiveAppBar = () => {
                                 },
                             }}
                         >
-                            <MenuItem>
-                                <Avatar /> Profile
+                            <MenuItem onClick={redirectToProfile}>
+                                <Avatar />Profile
                             </MenuItem>
                             <MenuItem>
                                 <Avatar /> My account

@@ -13,6 +13,7 @@ import bg5 from '../../assets/pic5.jpg';
 import { AuthContext } from '../../context/auth'
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { auth } from '../../firebase';
 
 function Login() {
 
@@ -30,7 +31,8 @@ function Login() {
         try {
             setError('');
             setLoading(true);
-            await login(email, password);
+            await login(email, password);            
+            // user = auth.currentUser;
             console.log('Logged in Successfully')
         } catch (error) {
             console.log(error.message);
@@ -43,8 +45,8 @@ function Login() {
     }
 
     useEffect(() => {
-        if (user) {
-            console.log(user);
+        if (user?.uid) {
+            // console.log(user);
             router.push('/');
         } else {
             console.log('Not logged in')

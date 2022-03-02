@@ -4,3 +4,7 @@ ReactJS website is client side rendered.
 3. File based routing.
 
 4. npm start -> npm run dev
+
+// challenges
+1. On clicking on profile button in menu, I was getting redirected to login page(due to protect router)
+User was null on start, as link refreshes the page. So used routing to redirect to profile page.
