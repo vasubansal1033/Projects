@@ -23,6 +23,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import Router, { useRouter } from 'next/router';
 import { Link } from '@mui/material';
+import SearchUsers from './SearchUsers';
 
 const settings = ['Profile', 'Logout'];
 
@@ -60,7 +61,7 @@ const ResponsiveAppBar = ({ userData }) => {
         router.push('/');
     }
     return (
-        <AppBar position="static" className="navbar">
+        <AppBar style={{background: 'white'}}position="static" className="navbar">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -80,14 +81,15 @@ const ResponsiveAppBar = ({ userData }) => {
           >            
           </Typography> */}
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, flexDirection: 'row', justifyContent: 'center'}}>
+                        <SearchUsers />
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }} className="nav-icons-container">
                         <HomeIcon fontSize='large' className='nav-icons' onClick={redirectToHome} />
                         <ExploreIcon fontSize='large' className='nav-icons' />
                         <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                 <Avatar alt={userData?.name} src={userData?.photoURL} sx={{ width: 56, height: 56, margin: "0.75rem" }} />
                             </IconButton>
                         </Tooltip>
@@ -124,7 +126,7 @@ const ResponsiveAppBar = ({ userData }) => {
                                         display: 'block',
                                         position: 'absolute',
                                         top: 0,
-                                        right: 14,
+                                        right: 20,
                                         width: 10,
                                         height: 10,
                                         bgcolor: 'background.paper',

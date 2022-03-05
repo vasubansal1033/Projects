@@ -37,6 +37,36 @@ function Feed() {
     }
   }, []);
 
+  const callback = (entries) => {
+    entries.forEach(async (entry) => {
+      // console.log(entry);
+      // console.log(entry.target);
+      let element = entry.target;
+
+      await element.play();
+      if (!element.paused && !entry.isIntersecting) {
+        setTimeout(() => {
+          element.pause();
+        }, 1000);
+      }
+
+    })
+  }
+
+  let observer = new IntersectionObserver(callback, {
+    threshold: 0.6
+  })
+  useEffect(() => {
+    const elements = document.querySelectorAll('.videos-container video');
+    elements.forEach((element) => {
+      observer.observe(element);
+    })
+    return () => {
+      observer.disconnect();
+    }
+  }, [posts]);
+
+
   return (
     <div className="feed-container">
       <Navbar userData={userData} />

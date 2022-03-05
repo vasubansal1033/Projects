@@ -69,6 +69,7 @@ function Upload({ userData }) {
                     console.log('File available at', downloadURL);
                     let obj = {
                         likes: [],
+                        comments: [],
                         postId: uid,
                         postURL: downloadURL,
                         profileName: userData.name,

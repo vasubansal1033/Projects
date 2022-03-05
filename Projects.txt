@@ -1,15 +1,18 @@
 DONE :-
 1. Postman clone - https://www.youtube.com/watch?v=g0gLojpleAg&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=63
+4. Insta Reels clone - https://www.youtube.com/watch?v=JA_HSPaBY-Q&list=PL-Jc9J83PIiGMUa8fiBQepXdUsfM3hxZ9&index=7
 
+Partially Done - 
+7. Daniel stuts(Genetic algorithm game vala) - https://www.youtube.com/channel/UCORSpAcEfLWPRnbD2AAizSg/playlists
+	- Physics game engine, SocketIO multiplayer game etc
 
 TODO :-
 2. NextJS - https://www.youtube.com/watch?v=DZKOunP-WLQ&list=PLu0W_9lII9agtWvR_TZdb_r0dNI8-lDwG
 3. D3.js and Covid Racer - https://www.youtube.com/watch?v=vtNpbxgC_3E&t=306s
-4. Insta Reels clone - https://www.youtube.com/watch?v=JA_HSPaBY-Q&list=PL-Jc9J83PIiGMUa8fiBQepXdUsfM3hxZ9&index=7
+
 5. Burger Creator - https://www.youtube.com/watch?v=hs9C0iSnaNk
 6. HTML/CSS Pepcoding playlist Projects - https://www.youtube.com/watch?v=Y5TeZB1IPPk&list=PL-Jc9J83PIiHU9RkY9sfh3G64-bd0ptvC&index=27
-7. Daniel stuts(Genetic algorithm game vala) - https://www.youtube.com/channel/UCORSpAcEfLWPRnbD2AAizSg/playlists
-	- Physics game engine, SocketIO multiplayer game etc
+
 8. Better chat app playlist - https://www.youtube.com/watch?v=oTTOyiwTO2Y&list=PLrwNNiB6YOA1a0_xXvogmvSHrLcanVKkF&index=1
 9. Pathfinder project - https://www.youtube.com/watch?v=msttfIHHkak
    Sorting visualizer - https://www.youtube.com/watch?v=pFXYym4Wbkc
@@ -18,6 +21,8 @@ TODO :-
 
 
 Javascript(Code with Harry) - https://www.youtube.com/watch?v=yIdA6HvUi_Q&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=65
+Thunk - https://www.youtube.com/watch?v=FYV9Smd4CLk&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
+React Anti-patterns - https://www.youtube.com/watch?v=b0IZo2Aho9Y
 
 1. Computer Networking - https://www.youtube.com/watch?v=P_gj_gw_fhQ&list=PL9zFgBale5fsO-ui9r_pmuDC3d2Oh9wWy
 Notes - https://github.com/8483/notes/blob/master/topics/networking.md

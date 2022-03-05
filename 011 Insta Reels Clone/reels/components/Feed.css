@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -57,7 +56,7 @@
 .post-container>video {
     height: 75vh;
     width: 50vh;
-    background-color: aqua;
+    background-color: rgba(245, 197, 197, 0.945);
     object-fit: contain;
     border-radius: 1rem;
 }
@@ -99,7 +98,7 @@
 .video-container {
     height: 80%;
     width: 60%;
-    background-color: rgba(235, 235, 235, 0.945);
+    background-color: rgba(245, 197, 197, 0.945);
     object-fit: center;
     display: flex;
     justify-content: center;
@@ -119,6 +118,7 @@
     /* align-items: center; */
 }
 .post-info-icons {
+    margin-left: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -130,9 +130,45 @@
     flex-direction: column;
 }
 .card1 {
-    height: 45vh;
+    max-height: 45vh;
+    overflow: auto;
+}
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
+.comment-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.comment-text span {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.comment-text p {
+    font-size: 0.75rem;
+    word-break: break-all;
+    white-space: normal;
+}
+.eachCommentContainer {
+    width: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(229, 236, 234);
+    padding: 0.2rem;
+    border-radius: 1rem;
+}
+.css-46bh2p-MuiCardContent-root {
+    padding: 8px
+}
 @media only screen and (max-width: 600px) {
     .nav-icons {
         display: none;

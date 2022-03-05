@@ -2,10 +2,12 @@ import Avatar from '@mui/material/Avatar';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentIcon from '@mui/icons-material/Comment';
 import React, { useContext, useEffect, useState } from 'react'
+import {findDOMNode } from 'react-dom';
 import { AuthContext } from '../context/auth'
 import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import CommentDialogue from './CommentDialogue';
+
 
 function Post({ postData, userData }) {
 
@@ -38,12 +40,25 @@ function Post({ postData, userData }) {
     const handleClose = () => {
         setOpen(null);
     };
+    const handleScroll = (e) => {
+        let nextVideo = findDOMNode(e.target).parentNode.nextSibling;
+        if (nextVideo) {
+            nextVideo.scrollIntoView({ behavior: "smooth" });
+            e.target.muted = true;
+        }
+    }
+
 
     return (
         <div className='post-container' >
 
-            <video src={postData.postURL} />
-            <div className="videos-info">
+            <video src={postData.postURL} muted={true}
+                onClick={(e) => {
+                    e.target.muted = !e.target.muted
+                }}
+                onEnded={handleScroll}
+            />
+            <div className="videos-info" >
                 <div className='avatar-container'>
                     <Avatar alt="Remy Sharp" src={postData.profileURL} sx={{ width: 56, height: 56, margin: "0.75rem" }} />
                     <p style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>{postData.profileName}</p>
@@ -61,9 +76,9 @@ function Post({ postData, userData }) {
                     <CommentIcon style={{ color: 'grey' }} fontSize='medium'
                         onClick={() => handleClickOpen(postData.postId)}
                     />
-                    <CommentDialogue open={open} handleClickOpen={handleClickOpen} 
-                    handleClose={handleClose} postData={postData} like={like}
-                    setLike={setLike} handleLike={handleLike}  />
+                    <CommentDialogue open={open} handleClickOpen={handleClickOpen}
+                        handleClose={handleClose} postData={postData} like={like}
+                        setLike={setLike} handleLike={handleLike} />
 
                 </div>
             </div>

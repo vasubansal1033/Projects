@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Dialog from '@mui/material/Dialog';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -14,12 +14,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CommentIcon from '@mui/icons-material/Comment';
 import { AuthContext } from '../context/auth';
 import AddComment from './AddComment';
+import Comments from './Comments';
+import { List } from '@mui/material';
 
 export default function CommentDialogue({ open, handleClickOpen, handleClose, postData, like, setLike, handleLike }) {
 
     const { user } = useContext(AuthContext);
-
-
     return (
         <div>
             <Dialog
@@ -48,8 +48,8 @@ export default function CommentDialogue({ open, handleClickOpen, handleClose, po
                                         <MoreVertIcon />
                                     </IconButton>
                                 }
-                                title={postData.profileName}
-                                subheader={`${postData.timestamp.toDate().toLocaleDateString()} ${postData.timestamp.toDate().toLocaleTimeString()}`}
+                                title={postData?.profileName}
+                                subheader={`${postData?.timestamp.toDate().toLocaleDateString()} ${postData.timestamp.toDate().toLocaleTimeString()}`}
                             />
                             {/* <CardMedia
                                 
@@ -59,10 +59,6 @@ export default function CommentDialogue({ open, handleClickOpen, handleClose, po
                                 <Typography>This post has {postData.likes.length} likes. This is the post status</Typography>
                             </CardContent>
 
-                            <Card className='card1'>
-
-                            </Card>
-
                             <CardActions>
                                 <div className='post-info-2'>
                                     <div className='post-info-icons'>
@@ -71,12 +67,18 @@ export default function CommentDialogue({ open, handleClickOpen, handleClose, po
                                         <CommentIcon style={{ marginLeft: '1rem', marginRight: '1rem', color: 'grey' }} fontSize='medium' />
                                         <Button size="small">Share</Button>
                                     </div>
-                                    <p style={{ fontSize: '1rem' }}>
+                                    <p style={{ fontSize: '1rem', marginLeft: '1rem' }}>
                                         {postData.likes.length == 0 ? 'No one likes this yet' :
                                             postData.likes.length == 1 ? `1 person likes this` :
                                                 `${postData.likes.length} people like this`}
                                     </p>
-                                    <AddComment />
+                                    <Card variant='outlined' className='card1'>
+                                        <List style={{ maxHeight: '50vh', overflow: 'scroll' }}>
+                                            <Comments postData={postData} />
+                                        </List>
+                                    </Card>
+
+                                    <AddComment postData={postData} />
                                 </div>
 
 

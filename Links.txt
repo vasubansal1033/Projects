@@ -6,6 +6,8 @@ React Functional and class components - https://www.geeksforgeeks.org/difference
 React Middleware - https://expressjs.com/en/guide/using-middleware.html
 React Controlled vs uncontrolled components - https://stackoverflow.com/questions/42522515/what-are-react-controlled-components-and-uncontrolled-components
 
+10 react antipatterns - https://www.youtube.com/watch?v=b0IZo2Aho9Y
+
 Hottest topics to practice for your next #frontend interview
 
 Javascript internals : Namaste Javascript (https://lnkd.in/gah2c3kG ) by Akshay Saini
