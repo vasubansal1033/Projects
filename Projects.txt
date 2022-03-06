@@ -34,6 +34,7 @@ Linux Hackerrank challenges -
 
 Different types of menu - https://www.youtube.com/watch?v=yoT29XK_-DA
 ThreeJS 16minute tutorial video - https://www.youtube.com/watch?v=Q7AOvWpIVHU
+Excellent blog for game dev - https://gamedevelopment.tutsplus.com/
 
 Delta exchange backup key :- YY57OOTXFYAFSWEG
 API Key :- PZOneo0CKNcRdMXHh8cHNUg3WLScsb

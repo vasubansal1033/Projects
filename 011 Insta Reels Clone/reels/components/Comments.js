@@ -30,8 +30,8 @@ function Comments({ postData }) {
         <div className='comments-container'>
             {
                 comments === null ? <CircularProgress /> :
-                    comments.map((comment) => {                        
-                        return <CardContent>
+                    comments.map((comment, idx) => {                        
+                        return <CardContent key={idx}>
                             <div className='eachCommentContainer'>
                                 <Avatar alt="Remy Sharp" src={comment.userPic}
                                     sx={{ width: 35, height: 35, margin: "0.1rem", marginRight: '0.5rem' }}

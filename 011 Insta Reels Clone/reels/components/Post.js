@@ -2,7 +2,7 @@ import Avatar from '@mui/material/Avatar';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentIcon from '@mui/icons-material/Comment';
 import React, { useContext, useEffect, useState } from 'react'
-import {findDOMNode } from 'react-dom';
+// import {findDOMNode } from 'react-dom';
 import { AuthContext } from '../context/auth'
 import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
@@ -40,13 +40,13 @@ function Post({ postData, userData }) {
     const handleClose = () => {
         setOpen(null);
     };
-    const handleScroll = (e) => {
-        let nextVideo = findDOMNode(e.target).parentNode.nextSibling;
-        if (nextVideo) {
-            nextVideo.scrollIntoView({ behavior: "smooth" });
-            e.target.muted = true;
-        }
-    }
+    // const handleScroll = (e) => {
+    //     let nextVideo = findDOMNode(e.target).parentNode.nextSibling;
+    //     if (nextVideo) {
+    //         nextVideo.scrollIntoView({ behavior: "smooth" });
+    //         e.target.muted = true;
+    //     }
+    // }
 
 
     return (
@@ -56,7 +56,7 @@ function Post({ postData, userData }) {
                 onClick={(e) => {
                     e.target.muted = !e.target.muted
                 }}
-                onEnded={handleScroll}
+                // onEnded={handleScroll}
             />
             <div className="videos-info" >
                 <div className='avatar-container'>
