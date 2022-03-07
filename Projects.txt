@@ -23,6 +23,7 @@ TODO :-
 Javascript(Code with Harry) - https://www.youtube.com/watch?v=yIdA6HvUi_Q&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=65
 Thunk - https://www.youtube.com/watch?v=FYV9Smd4CLk&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
 React Anti-patterns - https://www.youtube.com/watch?v=b0IZo2Aho9Y
+CPP OOPs - https://github.com/notescs/notes/tree/main/C-CPP-OOPS-for-Interviews
 
 1. Computer Networking - https://www.youtube.com/watch?v=P_gj_gw_fhQ&list=PL9zFgBale5fsO-ui9r_pmuDC3d2Oh9wWy
 Notes - https://github.com/8483/notes/blob/master/topics/networking.md
@@ -35,6 +36,8 @@ Linux Hackerrank challenges -
 Different types of menu - https://www.youtube.com/watch?v=yoT29XK_-DA
 ThreeJS 16minute tutorial video - https://www.youtube.com/watch?v=Q7AOvWpIVHU
 Excellent blog for game dev - https://gamedevelopment.tutsplus.com/
+AWS - https://medium.com/@KerrySheldon/aws-for-the-bootcamp-grad-79dfd91d0ff8
+
 
 Delta exchange backup key :- YY57OOTXFYAFSWEG
 API Key :- PZOneo0CKNcRdMXHh8cHNUg3WLScsb

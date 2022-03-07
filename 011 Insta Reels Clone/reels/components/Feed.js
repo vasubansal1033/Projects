@@ -12,9 +12,9 @@ function Feed() {
   const [userData, setUserData] = useState({});
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
+  useEffect(async () => {
     // console.log(user.uid);
-    const unsub = onSnapshot(doc(db, 'users', user.uid), (doc) => {
+    const unsub = await onSnapshot(doc(db, 'users', user.uid), (doc) => {
       // console.log(doc.data());
       setUserData(doc.data());
     })
@@ -23,8 +23,8 @@ function Feed() {
     }
   }, [user])
 
-  useEffect(() => {
-    const unsub = onSnapshot(query(collection(db, "posts"), orderBy("timestamp", "desc")), (snapshot) => {
+  useEffect(async () => {
+    const unsub = await onSnapshot(query(collection(db, "posts"), orderBy("timestamp", "desc")), (snapshot) => {
       let tempArray = [];
       snapshot.docs.map((doc) => {
         tempArray.push(doc.data());

@@ -8,7 +8,7 @@ function SearchUsers() {
     const [users, setUsers] = useState([]);
     useEffect(async () => {
         
-        const unsub = onSnapshot(collection(db, "users"), (snapshot) => {
+        const unsub = await onSnapshot(collection(db, "users"), (snapshot) => {
             let tempArray = [];
             snapshot.docs.map((doc) => {
               tempArray.push(doc.data());
@@ -16,9 +16,12 @@ function SearchUsers() {
             setUsers(tempArray);
             // console.log(posts);
           })
-          return () => {
-            unsub();
-          }       
+        //   return () => {
+        //     unsub();
+        //   }  
+        return () =>{
+            setUsers([]);
+        }     
 
     }, []);
 

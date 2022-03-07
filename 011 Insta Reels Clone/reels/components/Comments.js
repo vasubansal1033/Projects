@@ -11,8 +11,8 @@ function Comments({ postData }) {
         let tempArray = [];
         postData.comments.map(async (commentId, idx) => {
             const unsub = onSnapshot(doc(db, 'commentCollection', commentId), (doc) => {
-                
-                if(doc.data()!=undefined) {
+
+                if (doc.data() != undefined) {
                     tempArray.push(doc.data());
                     setComments([...tempArray]);
                 }
@@ -27,10 +27,14 @@ function Comments({ postData }) {
     // console.log(comments);
 
     return (
-        <div className='comments-container'>
+        <div className='comments-container' style={{ display: 'flex', alignItems: 'center'}}>
             {
-                comments === null ? <CircularProgress /> :
-                    comments.map((comment, idx) => {                        
+                comments === null ?
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1rem'}}>
+                        <CircularProgress variant="indeterminate"/>
+                        <p style={{fontSize: '16px'}}>No comments yet</p>
+                    </div> :
+                    comments.map((comment, idx) => {
                         return <CardContent key={idx}>
                             <div className='eachCommentContainer'>
                                 <Avatar alt="Remy Sharp" src={comment.userPic}
