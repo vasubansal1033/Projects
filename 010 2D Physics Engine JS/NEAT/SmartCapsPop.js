@@ -2,9 +2,9 @@ class SmartCapsPop {
     constructor(popSize) {
         this.caps = [];
         this.popSize = popSize;
-        this.mutationRate = 0.01;
-        this.startingPoint = new Vector(100, 400);
-        this.targetPoint = new Vector(500, 100);
+        this.mutationRate = 0.05;
+        this.startingPoint = new Vector(60, 420);
+        this.targetPoint = new Vector(550, 50);
         this.nextGenBrains = [];
         this.generation = 1;
     }
@@ -14,7 +14,7 @@ class SmartCapsPop {
                 this.caps[i].remove();
             }
             this.caps[i] = new SmartCaps(this.startingPoint.x, this.startingPoint.y + 10, this.startingPoint.x, this.startingPoint.y - 10, 10, 5);
-            this.caps[i].createSteps(100);
+            // this.caps[i].createSteps(250);
         }
     }
     velocitySum() {
@@ -33,8 +33,9 @@ class SmartCapsPop {
     }
     setFitness() {
         this.caps.forEach((caps) => {
-            caps.fitness = (1000 / caps.distance(this.targetPoint)) ** 4;
-            console.log(caps.fitness);
+            // caps.fitness = (1000 / caps.distance(this.targetPoint)) ** 4;
+            // console.log(caps.fitness);
+            caps.fitness = caps.reward ** 4;
         })
     }
     fitnessSum() {
@@ -57,16 +58,55 @@ class SmartCapsPop {
         }
     }
     crossOver(parent1, parent2) {
-        let newBrain = [];
-        for (let i = 0; i < parent1.brain.length; i++) {
-            newBrain[i] = Math.round(Math.random()) ? parent1.brain[i] : parent2.brain[i];
+        let newBrain = new NeuralNetwork(5, 5, 4);
+        for (let i = 0; i < newBrain.hPerceptron.length; i++) {
+            for (let j = 0; j < newBrain.hPerceptron[i].weights.length; j++) {
+                newBrain.hPerceptron[i].weights[j] =
+                    Math.random() < (parent1.reward / (parent1.reward + parent2.reward)) ?
+                        parent1.brain.hPerceptron[i].weights[j] :
+                        parent2.brain.hPerceptron[i].weights[j];
+            }
+            newBrain.hPerceptron[i].bias =
+                Math.random() < (parent1.reward / (parent1.reward + parent2.reward)) ?
+                    parent1.brain.hPerceptron[i].bias :
+                    parent2.brain.hPerceptron[i].bias;
         }
+
+        for (let i = 0; i < newBrain.oPerceptron.length; i++) {
+            for (let j = 0; j < newBrain.oPerceptron[i].weights.length; j++) {
+                newBrain.oPerceptron[i].weights[j] =
+                    Math.random() < (parent1.reward / (parent1.reward + parent2.reward)) ?
+                        parent1.brain.oPerceptron[i].weights[j] :
+                        parent2.brain.oPerceptron[i].weights[j];
+            }
+            newBrain.oPerceptron[i].bias =
+                Math.random() < (parent1.reward / (parent1.reward + parent2.reward)) ?
+                    parent1.brain.oPerceptron[i].bias :
+                    parent2.brain.oPerceptron[i].bias;
+        }
+
         return newBrain;
     }
     mutation(brain) {
-        for (let i = 0; i < brain.length; i++) {
+        for (let i = 0; i < brain.hPerceptron.length; i++) {
+            for (let j = 0; j < brain.hPerceptron[i].weights.length; j++) {
+                if (Math.random() < this.mutationRate) {
+                    brain.hPerceptron[i].weights[j] = Math.random() * 2 - 1;
+                }
+            }
             if (Math.random() < this.mutationRate) {
-                brain[i] = randInt(0, 15).toString(2).padStart(4, '0');
+                brain.hPerceptron[i].bias = Math.random() * 2 - 1;
+            }
+        }
+
+        for (let i = 0; i < brain.oPerceptron.length; i++) {
+            for (let j = 0; j < brain.oPerceptron[i].weights.length; j++) {
+                if (Math.random() < this.mutationRate) {
+                    brain.oPerceptron[i].weights[j] = Math.random() * 2 - 1;
+                }
+            }
+            if (Math.random() < this.mutationRate) {
+                brain.oPerceptron[i].bias = Math.random() * 2 - 1;
             }
         }
     }
@@ -85,6 +125,7 @@ class SmartCapsPop {
             this.caps[i].setPosition(this.startingPoint.x, this.startingPoint.y, 0);
             this.caps[i].setColor('lightgreen');
             this.caps[i].comp[1].color = 'yellowgreen';
+            this.caps[i].reward = 0;
         }
         this.nextGenBrains = [];
         this.generation++;
