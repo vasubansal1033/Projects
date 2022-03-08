@@ -1,4 +1,5 @@
-Images of the website
+## Images of the website
+![pic0](https://github.com/vasubansal1033/Projects/blob/master/011%20Insta%20Reels%20Clone/pics/pic0.png)
 ![pic1](https://github.com/vasubansal1033/Projects/blob/master/011%20Insta%20Reels%20Clone/pics/pic1.png)
 ![pic2](https://github.com/vasubansal1033/Projects/blob/master/011%20Insta%20Reels%20Clone/pics/pic2.png)
 ![pic3](https://github.com/vasubansal1033/Projects/blob/master/011%20Insta%20Reels%20Clone/pics/pic3.png)
