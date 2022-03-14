@@ -7,6 +7,14 @@ React Middleware - https://expressjs.com/en/guide/using-middleware.html
 React Controlled vs uncontrolled components - https://stackoverflow.com/questions/42522515/what-are-react-controlled-components-and-uncontrolled-components
 
 10 react antipatterns - https://www.youtube.com/watch?v=b0IZo2Aho9Y
+Design Principles and SOLID design - https://www.youtube.com/watch?v=JVWZR23B_iE&list=PLZlA0Gpn_vH_CthENcPCM0Dww6a5XYC7f
+Webdev simplified - https://www.youtube.com/c/WebDevSimplified/playlists
+Composition vs inheritance - https://www.youtube.com/watch?v=nnwD5Lwwqdo
+Express middleware - https://www.youtube.com/watch?v=lY6icfhap2o
+
+Code with tkssharma - Hackerrank NOdejs certification video guy - https://www.youtube.com/c/TarunSharma7372/playlists
+
+Frontend practice websites - https://javascript.plainenglish.io/7-websites-to-take-your-front-end-skills-from-1x-to-100x-98c1db53c6d1
 
 Hottest topics to practice for your next #frontend interview
 

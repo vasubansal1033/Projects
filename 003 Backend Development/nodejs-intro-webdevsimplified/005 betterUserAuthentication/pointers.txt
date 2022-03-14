@@ -1,0 +1,8 @@
+1. Used passport js for bit of ease
+It is an authentication middleware for nodejs
+
+2. browser forms dont support delete request
+So used methodOverride library to override post
+request of a form.
+
+3. Used dotenv, .env file to store process environment variables

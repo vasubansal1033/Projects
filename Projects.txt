@@ -25,6 +25,11 @@ Thunk - https://www.youtube.com/watch?v=FYV9Smd4CLk&list=PL-Jc9J83PIiF999x_PNcRR
 React Anti-patterns - https://www.youtube.com/watch?v=b0IZo2Aho9Y
 CPP OOPs - https://github.com/notescs/notes/tree/main/C-CPP-OOPS-for-Interviews
 
+Youtube channels -
+1. Netninja - https://www.youtube.com/c/TheNetNinja/playlists
+2. Codedamn - https://www.youtube.com/c/codedamn
+3. Lama dev - https://www.youtube.com/c/LamaDev/playlists
+
 1. Computer Networking - https://www.youtube.com/watch?v=P_gj_gw_fhQ&list=PL9zFgBale5fsO-ui9r_pmuDC3d2Oh9wWy
 Notes - https://github.com/8483/notes/blob/master/topics/networking.md
 2. Pepcoding OS - https://www.youtube.com/watch?v=c2ywNLeTllg&list=PL-Jc9J83PIiEKfEI9f7afzCutT_3hPQP3&index=7
