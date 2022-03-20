@@ -1,3 +1,5 @@
+yt-dlp -o "%(playlist)s/%(playlist_index)03d-%(title)s.%(ext)s" -S "res:720" <URL>
+
 DONE :-
 1. Postman clone - https://www.youtube.com/watch?v=g0gLojpleAg&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=63
 4. Insta Reels clone - https://www.youtube.com/watch?v=JA_HSPaBY-Q&list=PL-Jc9J83PIiGMUa8fiBQepXdUsfM3hxZ9&index=7
@@ -18,7 +20,7 @@ TODO :-
    Sorting visualizer - https://www.youtube.com/watch?v=pFXYym4Wbkc
 10. Multiplayer 3D game - https://www.tutorialspoint.com/market/course/create-a-3d-multi-player-game-using-threejs-and-socketio/learn/111366/lecture.jsp
 11. Shopping Cart using Redux: https://www.youtube.com/watch?v=URBr_wEehbY&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
-
+12. System Design Notes - https://completedesigninterviewcourse.com/system-design-concepts-components/
 
 Javascript(Code with Harry) - https://www.youtube.com/watch?v=yIdA6HvUi_Q&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=65
 Thunk - https://www.youtube.com/watch?v=FYV9Smd4CLk&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
