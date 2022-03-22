@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="index.js" type="module"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+
+<body>
+    <form action="/" method="post" class="w-full">
+
+        <div class="flex items-center border-b border-teal-500 py-20 m-5">
+
+            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name"
+                for="town">Enter the town: </label>
+            <input
+                class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                type="text" placeholder="Enter town here" name="town" id="town">
+            <!-- <input type="text" name="town" id="town"></input> -->
+            <!-- <button type="submit">Submit!</button> -->
+            <input type="submit" value="Submit"
+                class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"></input>
+        </div>
+
+        <div class="flex justify-center">
+            <div>
+                <div class="form-check">
+                    <input
+                        class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                        type="radio" name="choice" id="current" checked value="current" />
+                    <label class="form-check-label inline-block text-gray-800" for="current">
+                        Current Data
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input
+                        class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                        type="radio" name="choice" id="forecast" value="forecast" />
+                    <label class="form-check-label inline-block text-gray-800" for="forecast">
+                        Forecast Data
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+<footer class="bg-gray-100 text-center lg:text-left mt-5">
+    <div class="container p-6 text-gray-800">
+        <div class="grid lg:grid-cols-2 gap-4">
+            <div class="mb-6 md:mb-0">
+                <h5 class="font-medium mb-2 uppercase">About</h5>
+
+                <p class="mb-4">
+                <ol>
+                    <li>Install the dependencies using npm i.</li>
+                    <li>Launch the server.js file using nodemon.</li>
+                    <li>Open localhost:3000</li>
+                    <li>Enter the town in the search field. Check the button according to the request you
+                        want to make (current data or forecast data) and click on submit.</li>
+                    <li>The data will be populated in the Data directory (create it if not present)</li>
+                </ol>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center text-gray-700 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright: Vasu Bansal
+        <a class="text-gray-800" href="https://www.linkedin.com/in/vasu-bansal-673030147/">Linkedin Profile</a>
+    </div>
+</footer>
+
+</html>
