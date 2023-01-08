@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4632176d-f463-4798-bd7c-330fd883adc9" name="Changes" comment="" />
+    <list default="true" id="4632176d-f463-4798-bd7c-330fd883adc9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/springcore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/autowiring/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/autowiring/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/autowiring/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/constructor_injection/Addition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/constructor_injection/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/lifecycle_methods/Example.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/lifecycle_methods/Pepsi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/lifecycle_methods/Samosa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/lifecycle_methods/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/reference_injection/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/reference_injection/B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/springcore/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/java/com/springcore/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/autowiring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/autowiring1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/autowiring2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/autowiring_annotation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/constructor_injection.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/injecting_collection_types.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/lifecycle_methods.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/reference_injection.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Springboot Projects/spring tutorial/src/main/resources/setter_injection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Springboot Projects/db_setup/docker/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Java Springboot Projects/db_setup/docker/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java Springboot Projects/db_setup/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Java Springboot Projects/db_setup/docker/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,15 +79,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vasub/Projects&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/vasub/Projects",
+    "settings.editor.selected.configurable": "fileTemplates"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
