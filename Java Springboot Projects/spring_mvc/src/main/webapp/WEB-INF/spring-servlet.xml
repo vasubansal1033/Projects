@@ -11,9 +11,9 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
  ">
-    <context:component-scan base-package="src.main.controllers" />
+    <context:component-scan base-package="src.main.controllers"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" name="viewResolver">
-        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp">
 
         </property>
