@@ -5,6 +5,7 @@
         <title>Success page</title>
     </head>
     <body>
+        <p>Notification - ${message}</p>
         <h1>Your name is ${user.getUserName()} and email is ${user.getUserEmail()}</h1>
         <p>Password: ${user.getUserPassword()}</p>
         <h2>${Header}</h2>

@@ -1,6 +1,7 @@
 package src.main.controllers;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,10 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import src.main.models.User;
+import src.main.services.UserService;
 
 @Controller
 public class ContactController {
 
+    @Autowired
+    private UserService userService;
     @RequestMapping("/contact")
     public String contact() {
         return "contact";
@@ -26,7 +30,14 @@ public class ContactController {
     public String process(@ModelAttribute User user,
                           Model model) {
 
+        if(user.getUserName().isBlank()) {
+            return "redirect:/contact";
+        }
+
         System.out.println(user);
+        int newUserId = this.userService.createUser(user);
+
+        model.addAttribute("message", String.format("Created user with id: %s", newUserId));
 //        model.addAttribute("user", user);
 
         return "success";
@@ -48,4 +59,5 @@ public class ContactController {
 //
 //        return "success";
 //    }
+
 }
