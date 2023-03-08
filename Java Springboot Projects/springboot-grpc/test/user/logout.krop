@@ -1,0 +1,13 @@
+{
+  "details": {
+    "methodFqn": "user.logout"
+  },
+  "requests": [
+    {
+      "location": "logout-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc",
+  "importStreamId": "c25445c7-9c57-48f7-8f2b-6f6abf9e1760"
+}

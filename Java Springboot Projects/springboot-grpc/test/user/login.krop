@@ -1,0 +1,14 @@
+{
+  "details": {
+    "endpoint": "http://localhost:9090",
+    "methodFqn": "user.login"
+  },
+  "requests": [
+    {
+      "location": "login-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc",
+  "importStreamId": "c25445c7-9c57-48f7-8f2b-6f6abf9e1760"
+}
