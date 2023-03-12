@@ -1,0 +1,55 @@
+:wq -> write and quit
+:q! -> quit without saving
+:w -> save the file
+i -> enter the insert mode
+ESC -> escape from the insert mode to normal mode
+h, j, k, l -> left, down, up, right
+shift + g -> end of file
+gg -> beginning of file
+{ and } -> move up-down through blocks of code3
+NUMBER + Any command -> repeat that step NUMBER of times
+dd -> delete a line
+u -> undo
+ctrl + r -> redo
+yy -> copy the present line
+p -> paste below
+P -> paste above
+shift + v -> Visual mode (select text)
+o -> enters a new line below and moves to insert mode
+O -> enters a new line above and moves to insert mode
+w -> move to the beginning of the next word
+b -> move to the beginning of the previous word
+            :Number + ENTER -> move to line Number
+e -> move to the end of the word/next word
+ge -> move to the end of the previous word
+0 -> moves to beginning of the line
+^ (shift + 6) -> moves to the first word of the line            
+$ (shift + $) -> moves to the end of the line
+ctrl + w or ctrl + b -> move right or left, only breaking at space
+t + <Character> -> moves cursor one step before to the character, right of present position
+f + <Character> -> moves cursor to the character, right of present position
+% (shift + 5) -> moves to the matching bracket
+d + % -> delete everything between the two matching brackets
+d + w -> deletes the word
+c + w -> deletes the word, and enters into insert mode
+ctrl + d -> delete rest of he line (everything on right)
+ctrl + c -> delete everything on the right and enter insert mode
+c + t + <character> -> deletes everything upto that character, and enters insert mode
+d + t + <character> -> deletes everything upto that character
+ZZ - save and quit
+ZQ - discard changes and quit
+shift + 8 (*) -> toggle between all the instances of that word
+; and , -> repeat last f or F / t or T command (towards right and left respectively)
+zz -> scrolls such that the present cursor position is the center
+a -> append mode (same as i, but goes moves to next character)
+ctrl + a -> moves to end of line and enter insert mode
+ctrl + i -> moves to the beginning of line and insert mode
+shift + ' (tilde) -> change the case of the character and move to next
+. -> repeats the previous command
+r + <character> -> replaces the present character on cursor with given character
+R + <characters> -> similar as previous, but for multiple characters
+<< (shift + ,) or >> (shift + .) -> unindent/indent lines
+/<text> then press enter -> search text
+n or ctrl + n -> cycle through the searched string
+ctrl + S -> clear the current line, move to start and insert mode
+Practice for surround vim - https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56

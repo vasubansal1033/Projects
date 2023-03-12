@@ -1,3 +1,75 @@
+Learn all about this in JS - https://www.youtube.com/watch?v=EUgp0zxKCr0&list=PL-Jc9J83PIiFU_evuYnTGHVXU_LeZryNP&index=30
+Bubbling, Capturing in browser - https://www.youtube.com/watch?v=uEHYy96fh0E&list=PL-Jc9J83PIiHU9RkY9sfh3G64-bd0ptvC&index=40
+Debouncing in JS - https://www.youtube.com/watch?v=Zo-6_qx8uxg&list=PLlasXeu85E9eLVlWFs-nz5PKXJU4f7Fks&index=34
+
+Udemy Courses free hosted website - https://hidevs.net/course/the-web-developer-bootcamp
+Dynamic A2OJ - https://a2oj.herokuapp.com/
+Pepcoding Fanglist 2 - https://www.pepcoding.com/faangList2.0
+
+https://www.geeksforgeeks.org/can-constructor-private-cpp/
+
+https://leetcode.com/problems/remove-duplicate-letters/
+https://www.youtube.com/c/CleverProgrammer/playlists
+https://www.youtube.com/c/DevEd/playlists
+https://www.youtube.com/watch?v=EJxeMbDTkVI
+https://completedesigninterviewcourse.com/system-design-concepts-components/
+https://www.youtube.com/c/knightcubexr/videos
+
+Operating System
+
+Compiler, Loader, Linker
+Process
+Threads
+Process Scheduling
+Paging
+Segmentation
+Mutex/Semaphores
+DBMS
+
+Normalisation
+Locking
+Concurrency Control
+File vs DBMS
+SQL vs NoSQL
+Indexing
+ACID Properties
+Computer Networks
+
+OSI Model
+Subnetting/ Supernetting
+How Internet Works
+Routing Algorithms
+IPv4 vs IPv6
+http vs https
+OOPS
+
+Class
+Object
+Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+Linux
+
+Inode
+File Structure
+Priority in Linux
+fork()/ pipe()
+Multithreading
+How OS works?
+Basic commands
+System Design
+
+CAP theorem
+Scaling
+Load Balancer
+Distributed System
+Caching and its types
+Sharding
+API (REST vs SOAP)
+Feel free to add more important topics in comment section. All the best.
+
+
 Express Routers and Mounting - https://www.youtube.com/watch?v=iM_S4RczozU
 Back tick vs quote - https://stackoverflow.com/questions/47067319/back-tick-vs-single-quote-in-js
 CORS - https://www.youtube.com/watch?v=4KHiSt0oLJ0
@@ -29,3 +101,11 @@ React fiber : https://lnkd.in/ggimT68q
 Event handlers: https://lnkd.in/gHffdpPs
 client side vs server side rendering : https://lnkd.in/gCXxKnZN
 Event loop : https://lnkd.in/g9fyDT-Hs
+
+
+staging aether
+1. connect to emoney indonesia staging vpn
+2. we use kafka extensively across gojek 
+3. so we have to use consumer logic or use eglc (generic kafka consumer, provides services out of the box)
+4. 
+in the pr, go to pipeline and click for staging deployment

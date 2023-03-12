@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+
+#app div {
+  position: absolute;
+  color: white;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+}

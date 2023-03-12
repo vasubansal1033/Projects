@@ -61,7 +61,7 @@ const ResponsiveAppBar = ({ userData }) => {
         router.push('/');
     }
     return (
-        <AppBar style={{background: 'white'}}position="static" className="navbar">
+        <AppBar style={{ background: 'white' }} position="static" className="navbar">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -78,10 +78,10 @@ const ResponsiveAppBar = ({ userData }) => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >            
+        >            
           </Typography> */}
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, flexDirection: 'row', justifyContent: 'center'}}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, flexDirection: 'row', justifyContent: 'center' }}>
                         <SearchUsers />
                     </Box>
 

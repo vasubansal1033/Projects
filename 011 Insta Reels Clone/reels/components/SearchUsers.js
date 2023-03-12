@@ -7,21 +7,21 @@ function SearchUsers() {
 
     const [users, setUsers] = useState([]);
     useEffect(async () => {
-        
+
         const unsub = await onSnapshot(collection(db, "users"), (snapshot) => {
             let tempArray = [];
             snapshot.docs.map((doc) => {
-              tempArray.push(doc.data());
+                tempArray.push(doc.data());
             })
             setUsers(tempArray);
             // console.log(posts);
-          })
+        })
         //   return () => {
         //     unsub();
         //   }  
-        return () =>{
+        return () => {
             setUsers([]);
-        }     
+        }
 
     }, []);
 

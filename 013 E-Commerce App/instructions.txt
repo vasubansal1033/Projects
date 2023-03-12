@@ -1,0 +1,3 @@
+Clone repository of cleaned stuff
+1. git clone --single-branch -b react-mini https://github.com/safak/youtube.git .
+2. Install dependencies - yarn

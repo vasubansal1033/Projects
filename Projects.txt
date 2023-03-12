@@ -21,11 +21,20 @@ TODO :-
 10. Multiplayer 3D game - https://www.tutorialspoint.com/market/course/create-a-3d-multi-player-game-using-threejs-and-socketio/learn/111366/lecture.jsp
 11. Shopping Cart using Redux: https://www.youtube.com/watch?v=URBr_wEehbY&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
 12. System Design Notes - https://completedesigninterviewcourse.com/system-design-concepts-components/
+13. Dream portfolio - https://jesse-zhou.com/?fbclid=IwAR2Zu2_Tbdm8AUnZEldgx2tmslQ2GyLF_-TwvvFJLy7yXWusYkpTwkcTq_s
+14. Admin Dashboard - https://www.youtube.com/watch?v=K7vHoUwClaM
+15. Javascript Physics engine 10 games - https://www.youtube.com/watch?v=PsL3iI61wl8
+16. Generate Portfolio - https://github.com/lwinmoepaing/generate-portfolio?fbclid=IwAR26Nl5-ZJe_9VbqrgIsuVJZ-qOHID5Lzm4KblODrJ-lhZ7Ig4hZzqI00YQ 
 
+https://leetcode.com/discuss/study-guide/458695/dynamic-programming-patterns/1330522
+Gaurav Sen System Design - https://www.youtube.com/watch?v=zaRkONvyGr8&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX&index=11
+FastAPI - https://www.youtube.com/watch?v=uldt_GTvZFI&list=PLShTCj6cbon9gK9AbDSxZbas1F6b6C_Mx&index=4
 Javascript(Code with Harry) - https://www.youtube.com/watch?v=yIdA6HvUi_Q&list=PLu0W_9lII9ajyk081To1Cbt2eI5913SsL&index=65
 Thunk - https://www.youtube.com/watch?v=FYV9Smd4CLk&list=PL-Jc9J83PIiF999x_PNcRRVdlrhWu0x3h&index=28
 React Anti-patterns - https://www.youtube.com/watch?v=b0IZo2Aho9Y
 CPP OOPs - https://github.com/notescs/notes/tree/main/C-CPP-OOPS-for-Interviews
+Respawn Gamejam - https://www.youtube.com/channel/UC2T4BexiIY1RZUUb6dm8gNQ/videos
+https://learnxinyminutes.com/docs/bash/
 
 Youtube channels -
 1. Netninja - https://www.youtube.com/c/TheNetNinja/playlists

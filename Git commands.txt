@@ -1,0 +1,104 @@
+git log // log history of commits
+git add .
+git commit -m "Your message"
+git push
+
+- Useful shortcut
+- git commit -am '<commit message>'
+Add and commit together in single command
+
+Remote origin commands 
+1. git add remote origin <url of remote repository>
+2. git branch -M main
+3. git push -u origin main
+
+git clone <clone url.git> 
+git clone <clone url.git> /dir
+
+When cloning repo from github, if you don't have write access (if working in a team, you will)
+1. git add remote myOrigin <url of remote repository>
+2. git branch -M main
+3. git push -u myOrigin main
+- origin variable is already set, so use new one like myOrigin
+
+.gitignore file
+- Regex expressions work
+- /fileName -> ignore file with fileName in current directory only
+- fileName -> ignore all files with fileName even in subdirectories
+- dir/ -> ignore all files in directory dir
+
+Removing tracked files
+- rm <filename> to delete file
+- git add . (stage the changes)
+To do this in one step
+- git rm <filename>
+- git rm -f <filename> (delete the file and remove the file from staging even if it has modifications)
+- git rm --cached <filename> -> remove the file from staging and tracking, but not deleting the file
+
+Amending the commits (works only for commits that are commited to local repo. If pushed to remote repo, then we can't). Opens a VIM editor
+- git commit --amend
+
+Move file from staging to modified
+- git reset HEAD <filename>
+
+NOTE: git rm --cached <file> unstages and untracks (marked for removal on next commit) a given file, while git reset HEAD <file> just unstages the file
+
+You have a file in modified state. Restore it according to the latest commit.
+- git checkout -- <filename>
+
+You have a file in modified state. Restore it according to the latest commit and save the modified state.
+This will get stored in a stack like container. Use pop command to get those changes
+
+- git stash (restores the files to the latest commit, and saves the changes)
+- git stash pop (pops from the top of stash stack, and applies the changes to the latest commit that were stashed)
+- git stash clear (clears the stash)
+
+Better way to do above things :
+Move a file from staged area to modified state -> git restore --stage <filename>
+Move file from modified to unmodified state (restores file to latest staged/commited version, NOTE - This doesn't save the changes like git stash) 
+-> git restore <filename>
+
+Aliasing
+- git config --global alia.<customized_cmd_name> <'cmd replaced'> (remove global flag if doing only for current project)
+e.g. git config --global alias.unstage 'reset HEAD'
+   - git unstage abc.txt (git reset HEAD abc.txt)
+
+e.g. git log -2 -> Shows previous 2 commits
+    - git config --global alias.last2 'log -2'
+    - git last2
+
+Git branching
+- Good link - https://learngitbranching.js.org/?NODEMO
+- git branch <new_branch_name> -> create new branch
+- git checkout <branch_name> -> move pointer to a particular branch
+- git branch -> list all branches, also shows current branch we are on
+- git branch -d <branch_name> -> deletes a particular branch
+Fast forwarding, recursive
+
+Bring changes from remote repository(origin/main) to local repository(main).
+- git fetch
+Bring these changes to working directory -> git merge
+
+git pull = git fetch + git merge
+ 
+git rebase
+- If you have a branch for feature development (commits in that branch). Also the main has further commits.
+If you want to rebase your feature development branch after the latest commit in main (to maintain commits in linear fashion) you can use git rebase main
+Interactive rebase -> If you want to exclude some commits in feature branch, use git rebase -i main
+
+Git beautiful log
+- git log --all --decorate --online --graph
+ 
+Using Git Fork
+- git remote -v -> lists all remotes
+- Cannot commit changes to someone else's repository if you've cloned it. You don't have the write access.
+- Remote origin is set to the original repository link.
+- So, fork the repository, set a new remote origin (say myFork, git remote add myFork <url>) to the forked repository link. And commit changes to this
+- git push -> By defaults pushes to remote = origin
+- So, git push myOrigin
+- Now, raise a pull request so that the original repository owner can get to know the changes you made to their forked repository and take action accordingly (merge, or comment etc.)
+
+git push --set-upstream origin my_branch ?
+same as -> git push -u origin my_branch
+https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github
+https://stackoverflow.com/questions/14513278/git-merge-after-fetch-how-exactly

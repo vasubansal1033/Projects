@@ -1,5 +1,0 @@
-https://leetcode.com/problems/remove-duplicate-letters/
-https://leetcode.com/problems/sort-colors/submissions/
-
-social network api, check friends in O1
-interfaces, virtual function, etc

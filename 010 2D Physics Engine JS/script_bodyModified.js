@@ -248,7 +248,7 @@ class Ball extends Body {
         this.inertia = this.m * (this.comp[0].r ** 2);
     }
     draw() {
-        if(this.player) {
+        if (this.player) {
             this.comp[0].draw("purple");
         } else {
             this.comp[0].draw();

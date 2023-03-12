@@ -7,7 +7,7 @@ import { arrayUnion, doc, onSnapshot, setDoc, updateDoc } from 'firebase/firesto
 import { db } from '../firebase';
 import { v4 as uuidv4 } from 'uuid'
 
-function AddComment({postData}) {
+function AddComment({ postData }) {
 
     const { user } = useContext(AuthContext);
     const [userData, setUserData] = useState({});
@@ -15,13 +15,13 @@ function AddComment({postData}) {
     useEffect(() => {
         // console.log(user.uid);
         const unsub = onSnapshot(doc(db, 'users', user.uid), (doc) => {
-          // console.log(doc.data());
-          setUserData(doc.data());
+            // console.log(doc.data());
+            setUserData(doc.data());
         })
         return () => {
-          unsub();
+            unsub();
         }
-      }, [user])
+    }, [user])
 
     const [text, setText] = useState('');
     const postComment = async () => {

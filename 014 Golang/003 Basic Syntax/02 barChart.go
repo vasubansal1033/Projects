@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 func printBar(arr [5]int) {
 	var max int = 0
 
@@ -19,10 +23,11 @@ func printBar(arr [5]int) {
 			}
 		}
 
-		fmt.printLn(str)
+		fmt.Println(str)
 	}
 }
 
 func main() {
-
+	arr := [5]int{5,3,2,5,4}
+	printBar(arr)
 }

@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-function Pagination({page, goAhead, goBack}) {  
+function Pagination({ page, goAhead, goBack }) {
 
     return (
         <>
             <div className="w-full flex justify-center mb-8">
-                <button 
-                onClick={goBack}
-                 className="
+                <button
+                    onClick={goBack}
+                    className="
                     p-2
                     border-2 border-indigo-500 border-r-0
                     text-indigo-500
@@ -23,9 +23,9 @@ function Pagination({page, goAhead, goBack}) {
                 ">
                     {page}
                 </button>
-                <button 
-                onClick={goAhead}
-                 className="
+                <button
+                    onClick={goAhead}
+                    className="
                     p-2
                     border-2 border-indigo-500 border-l-0
                     text-indigo-500  

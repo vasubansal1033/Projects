@@ -56,7 +56,7 @@ function Post({ postData, userData }) {
                 onClick={(e) => {
                     e.target.muted = !e.target.muted
                 }}
-                // onEnded={handleScroll}
+            // onEnded={handleScroll}
             />
             <div className="videos-info" >
                 <div className='avatar-container'>
