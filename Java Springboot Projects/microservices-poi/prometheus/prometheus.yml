@@ -1,0 +1,59 @@
+global:
+  scrape_interval:     10s
+  evaluation_interval: 10s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: [ 'localhost:9090' ]
+
+  # Discover Eureka services to scrape.
+  - job_name: 'eureka'
+    # Scrape Eureka itself to discover new services.
+    eureka_sd_configs:
+    # Prometheus instance running inside docker cannot connect to Eureka running on localhost
+    # So provided the IP address of the machine
+#    - server: http://localhost:8761/eureka
+    - server: http://eureka:password@192.168.29.87:8761/eureka
+      refresh_interval: 30s
+    relabel_configs:
+    - source_labels: [__meta_eureka_app_name]
+      target_label: application
+      regex: API-GATEWAY
+      action: drop
+    - source_labels: [__meta_eureka_app_instance_metadata_metrics_path]
+      target_label: __metrics_path__
+      replacement: '/actuator/prometheus'
+    - source_labels: [__address__]
+      target_label: instance
+
+#  - job_name: 'api_gateway'
+#        metrics_path: '/actuator/prometheus'
+#        static_configs:
+#          - targets: [ 'localhost:8181' ]
+#            labels:
+#              application: 'API Gateway'
+#  - job_name: 'product_service'
+#    metrics_path: '/actuator/prometheus'
+#    static_configs:
+#      - targets: ['product-service:8181']
+#        labels:
+#          application: 'Product Service Application'
+#  - job_name: 'order_service'
+#    metrics_path: '/actuator/prometheus'
+#    static_configs:
+#      - targets: ['order-service:8181']
+#        labels:
+#          application: 'Order Service Application'
+#  - job_name: 'inventory_service'
+#    metrics_path: '/actuator/prometheus'
+#    static_configs:
+#      - targets: ['inventory-service:8181']
+#        labels:
+#          application: 'Inventory Service Application'
+#  - job_name: 'notification_service'
+#    metrics_path: '/actuator/prometheus'
+#    static_configs:
+#      - targets: ['notification-service:8181']
+#        labels:
+#          application: 'Notification Service Application'

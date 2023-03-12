@@ -1,0 +1,654 @@
+{
+	"info": {
+		"_postman_id": "d7813549-c1f3-4665-b342-06224219f773",
+		"name": "Projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24491344"
+	},
+	"item": [
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "place order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderLineItemsDtoList\": [\n        {\n            \"skuCode\": \"iphone_13\",\n            \"price\": 1200,\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-service",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Iphone 13\",\n    \"description\": \"This is the latest model of Iphone\",\n    \"price\": \"1300\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inventory-service",
+			"item": [
+				{
+					"name": "in stock",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/inventory?skuCodeList=iphone_13,iphone_13_red",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "skuCodeList",
+									"value": "iphone_13,iphone_13_red"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "expense_tracker",
+			"item": [
+				{
+					"name": "add expense",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"expenseName\": \"Netflix\",\n    \"expenseCategory\": \"ENTERTAINMENT\",\n    \"expenseAmount\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all expenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get expense by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/expense/Netflix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expense",
+								"Netflix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update expense",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"63fb8fa7c0842c4cb4300b42\",\n    \"expenseName\": \"Amazon Prime\",\n    \"expenseCategory\": \"ENTERTAINMENT\",\n    \"expenseAmount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete expense",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/expense/63fb8fa7c0842c4cb4300b42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expense",
+								"63fb8fa7c0842c4cb4300b42"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "keycloak-project",
+			"item": [
+				{
+					"name": "single employee api",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "password",
+									"value": "bansal1033",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bansal",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "springboot-keycloak",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/vasu_realm/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/employees/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"employees",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin employee api",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJyQ3cyeVItYVdST2NRdXpKTGtzYkU3UndIdmVtZEhmMkJJQmJ3SkY2NDJzIn0.eyJleHAiOjE2Nzc5MTI3MTksImlhdCI6MTY3NzkxMjQxOSwianRpIjoiMTQ2NDBlMzMtNTMxMC00NGE4LTg3N2EtMjBhMmNiYjIyZTgzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy92YXN1X3JlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ3OWZiZWNhLWIwMDAtNGYzZi1hNmEyLTRlNzg2ZDc4OGNjMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNwcmluZ2Jvb3Qta2V5Y2xvYWsiLCJzZXNzaW9uX3N0YXRlIjoiMThlNGIzNGEtM2ZmOS00ZmY3LThlNzUtNWQ2OWQzYmNjNTNkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy12YXN1X3JlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZCI6IjE4ZTRiMzRhLTNmZjktNGZmNy04ZTc1LTVkNjlkM2JjYzUzZCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidmFzdSIsImdpdmVuX25hbWUiOiIiLCJmYW1pbHlfbmFtZSI6IiJ9.R4xon_OFqEX0OYIh0NokPduLyth29HSCBfhrGsvNlXZMA6zhRopaaKGa5QuEwwgsSfSeyL33NxsMtJLlNL8nkpo1eikCy4PZbkHfILnnnJAMfi5R7W3Jmpo12yE-lbB9lFq5VKGFJ1exVps_JFCcbkdeSjjX3-kQtuHyNYsLfPCXSvtTQWBeVVRFU7RYA1IFcOV4s-bujpX6t2WbCf9_GwuvpyyTy43B2NKBKz0fkMvtxC9hYIxoc1oN9rZPO4nrITcGrnczSWUO0Eud3FaQNc3BY4D-8nOEN-m-__e8xLlKt6UVjZkB2jW4ds6SG0r8oI0fOe5YH2Z6OzuMrkapow",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token Name",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3MWUxNTE5Ni1lNzNkLTQ0ZmItYjQyMi0zNjY3NGQ1ZDBhNTUifQ.eyJleHAiOjE2Nzc5MTQyMTksImlhdCI6MTY3NzkxMjQxOSwianRpIjoiOTI3OGVmYTgtYTJmNC00YmRlLTk5ZDYtNjIxYjlmZjRhMzA4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy92YXN1X3JlYWxtIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy92YXN1X3JlYWxtIiwic3ViIjoiZDc5ZmJlY2EtYjAwMC00ZjNmLWE2YTItNGU3ODZkNzg4Y2MxIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InNwcmluZ2Jvb3Qta2V5Y2xvYWsiLCJzZXNzaW9uX3N0YXRlIjoiMThlNGIzNGEtM2ZmOS00ZmY3LThlNzUtNWQ2OWQzYmNjNTNkIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZCI6IjE4ZTRiMzRhLTNmZjktNGZmNy04ZTc1LTVkNjlkM2JjYzUzZCJ9.Za8aBMOy4E1ROodWKpk34QEpTIJOk2ptMu88voDRNrg",
+									"type": "string"
+								},
+								{
+									"key": "expires_in",
+									"value": 300,
+									"type": "number"
+								},
+								{
+									"key": "token_id",
+									"value": "b16444c0-0148-443f-a08c-c0f12d049a9e",
+									"type": "string"
+								},
+								{
+									"key": "timestamp",
+									"value": 1677912419344,
+									"type": "number"
+								},
+								{
+									"key": "password",
+									"value": "vasu1033",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vasu",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "springboot-keycloak",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/vasu_realm/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "id",
+									"value": "request/b79b81cd-32b6-456f-989f-b8842f89d79c/0281d632-43db-48bd-8679-36c9d8d15552",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-gateway",
+			"item": [
+				{
+					"name": "get product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "kOSPR3aaQsuKm3B6gybjMQVVaxgaUhMC",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "spring-cloud-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/springboot-microservices/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "bansal1033",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bansal",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place order",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "kOSPR3aaQsuKm3B6gybjMQVVaxgaUhMC",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "spring-cloud-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/springboot-microservices/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "bansal1033",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bansal",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderLineItemsDtoList\": [\n        {\n            \"skuCode\": \"iphone_13\",\n            \"price\": 1200,\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "YFIfiAhBgk56rGbGcKEx0oUzUAVPQOcO",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "spring-cloud-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/springboot-microservices/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "bansal1033",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "bansal",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8181/eureka/web",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"eureka",
+								"web"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

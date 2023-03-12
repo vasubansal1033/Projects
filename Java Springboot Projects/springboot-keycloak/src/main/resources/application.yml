@@ -1,0 +1,14 @@
+server:
+  port: 9090
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+keycloak:
+  realm:  vasu_realm
+  auth-server-url: http://localhost:8181/
+  resource: springboot-keycloak
+  public-client: true
+  bearer-only: true
