@@ -4,6 +4,3 @@ spring:
 
 server:
   port: 9898
-
-logging:
-  file: /logs/app,..log
