@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: ELK-STACK-EXAMPLE
-
-server:
-  port: 9898
-
-logging:
-  file: /logs/app,..log

@@ -86,7 +86,7 @@ services:
     restart: always
     ports:
       - "9090:9090"
-      - "8761:8761"
+#      - "8761:8761"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
