@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    height: 100vh;
+    gap: 2vh;
+}
+.container > button.messageBtn {
+    width: 25%;
+    border-radius: 10%;
+    border: none;
+    padding: 2vh 2vh;
+    background-color: skyblue;
+    align-self: center;
+    cursor: pointer;
+}
