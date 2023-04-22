@@ -1,0 +1,23 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-color: blueviolet;
+
+    width: 50%;
+}
+
+.form-field {
+    margin: 5px;
+    padding: 5px;
+}
+
+.submit-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    cursor: pointer;
+}

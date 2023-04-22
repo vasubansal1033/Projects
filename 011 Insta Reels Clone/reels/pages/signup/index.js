@@ -1,133 +1,112 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
-import Image from 'next/image'
-import insta from '../../assets/instagram.jpg'
+import Image from 'next/image';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
+import { AuthContext } from '../../context/AuthContext';
 import { useRouter } from 'next/router';
-import { AuthContext } from '../../context/auth';
-import { db, storage } from '../../firebase';
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { doc, setDoc } from 'firebase/firestore';
+import { uploadFileToCloudStorage } from '../../backend/firebaseCloudStorage';
 
 function Signup() {
-
-  const router = useRouter();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [file, setFile] = useState(null);
-
+  const [username, setUsername] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [file, setFile] = useState(null);
 
-  const { signup, user } = useContext(AuthContext);
+  const { signUp, user = null } = useContext(AuthContext);
 
-  const handleClick = async function () {
-    try {
-      setError('');
-      setLoading(true);
-      const user = await signup(email, password);
-      console.log('Signed up Successfully')
-
-      const storageRef = ref(storage, `${user.user.uid}/profile`);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-
-      // Register three observers:
-      // 1. 'state_changed' observer, called any time the state changes
-      // 2. Error observer, called on failure
-      // 3. Completion observer, called on successful completion
-      uploadTask.on('state_changed',
-        (snapshot) => {
-          // Observe state change events such as progress, pause, and resume
-          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-          switch (snapshot.state) {
-            case 'paused':
-              console.log('Upload is paused');
-              break;
-            case 'running':
-              console.log('Upload is running');
-              break;
-          }
-        },
-        (error) => {
-          // Handle unsuccessful uploads
-          console.log(error.message)
-        },
-        () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            console.log('File available at', downloadURL);
-            let obj = {
-              name: name,
-              email: email,
-              uid: user.user.uid,
-              photoURL: downloadURL,
-              posts: []
-            }
-            await setDoc(doc(db, 'users', user.user.uid), obj)
-            console.log('doc uploaded')
-          });
-        }
-      );
-
-    } catch (error) {
-      console.log(error.message);
-      setError(error.message);
-      setTimeout(() => {
-        setError('');
-      }, 3000);
-    }
-    setLoading(false);
-  }
-
+  const router = useRouter();
   useEffect(() => {
     if (user) {
       router.push('/');
     } else {
-      console.log('Not logged in')
+      console.log("User not logged in!");
     }
-  }, [user])
+  }, [user]);
+
+  const handleSignupSubmit = async (e) => {
+    try {
+      setLoading(true); setError('');
+      const newUser = await signUp(email, password);
+      console.log(newUser.user.uid);
+      await uploadFileToCloudStorage(`${newUser.user.uid}/profile_picture`, username, email, newUser.user.uid, file)
+
+      console.log("Signup successfull");
+    } catch (err) {
+      setError(err.message);
+      setTimeout(() => {
+        setError('');
+      }, 2000)
+    }
+    setLoading(false);
+  }
 
   return (
     <div className="signup-container">
+
       <div className="signup-card">
-        <Image src={insta} />
-        <TextField size="small" margin="dense" id="outlined-basic" fullWidth
-          label="Full Name" variant="outlined"
-          value={name}
-          onChange={(e) => { setName(e.target.value) }}
-        />
-        <TextField size="small" margin="dense" id="outlined-basic" fullWidth
+        <Image src='/assets/instagram.jpg' width={250} height={75} alt='logo' priority={1} />
+        <TextField
+          fullWidth margin='dense'
           label="Email" variant="outlined"
+          type='email'
           value={email}
-          onChange={(e) => { setEmail(e.target.value) }}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <TextField size="small" margin="dense" id="outlined-basic" fullWidth
-          label="Password" type="password" variant="outlined"
+        <TextField
+          fullWidth margin='dense'
+          label="Password"
+          variant="outlined"
+          type='password'
           value={password}
-          onChange={(e) => { setPassword(e.target.value) }}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <Button fullWidth variant="outlined" margin="dense" component="label" style={{ marginTop: '1rem' }}>
-          <input type="file" accept="image/*" style={{ display: 'none' }}
-            onChange={(e) => { setFile(e.target.files[0]) }}
-          />
-          Upload
-        </Button>
-        <Button fullWidth variant="contained" margin="dense" component="span"
+        <TextField
+          fullWidth margin='dense'
+          label="Full name"
+          variant="outlined"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <Button
+          variant="outlined"
+          component="label"
           style={{ marginTop: '1rem' }}
-          onClick={handleClick}
-          disable={loading}
+
         >
-          Signup
+          Upload
+          <input hidden accept="image/*"
+            multiple type="file"
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+        </Button>
+
+        <br />
+
+        {
+          error != '' &&
+          (
+            <div className="signup-error" style={{ marginTop: '0.5rem' }}>
+              <span style={{ color: 'red' }}>{error}</span>
+            </div>
+          )
+        }
+
+        <Button
+          variant="contained"
+          style={{ marginTop: '1rem' }}
+          onClick={handleSignupSubmit}
+          disabled={loading}
+        >
+          Click here to Signup
         </Button>
       </div>
-      <div className="bottom-card">
-        Already have an account? <Link href='/login'><a><span style={{ color: 'blue' }}>Login</span></a></Link>
+
+      <div className="footer-card">
+        <p>Already have an account? <Link href='/login'><span style={{ color: 'blue' }}>Login</span></Link></p>
       </div>
     </div>
   )

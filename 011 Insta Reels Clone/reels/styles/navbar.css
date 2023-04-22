@@ -1,0 +1,20 @@
+@media only screen and (max-width: 725px) {
+
+    .instagram-icon {
+        display: 'block' !important;
+    }
+
+    .instagram-logo {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 725px) {
+    .instagram-icon {
+        display: none;
+    }
+}
+
+.navbar-container {
+    width: 100%;
+}

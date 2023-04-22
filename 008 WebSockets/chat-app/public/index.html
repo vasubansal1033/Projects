@@ -2,30 +2,31 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/socket.io/socket.io.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>ChatApp</title>
 </head>
 
 <body>
-    <p>Welcome to the ChatApp</p>
-    <form id="message-form">
-        <div class="container">
-            <label for="message">Message</label>
-            <input type="text" id="message" name="message" />
-
-            <button class="submit-btn" type="Submit">Submit</button>
-            <button id="send-loc-btn" class="submit-btn">Send location</button>
-
-        </div>
-    </form>
-    <div class="chat-messages-container"></div>
-
-    <script type="text/javascript" src="js/libs/moment.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <div class="login-form">
+        <form action="/chat" method="get">
+            <h3>Join Chat</h3>
+            <div class="form-field">
+                <label for="name">Username</label>
+                <input type="text" name="name" autofocus />
+            </div>
+            <div class="form-field">
+                <label for="name">Room</label>
+                <input type="text" name="room" autofocus />
+            </div>
+            <div class="form-field">
+                <button class="submit-btn" type="submit">Enter the room</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

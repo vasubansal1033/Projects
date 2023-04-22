@@ -1,0 +1,56 @@
+.login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 25rem;
+    padding: 1rem;
+    border: 1px lightgray solid;
+    text-align: center;
+}
+
+.footer-card {
+    width: 20rem;
+    margin-top: 1rem;
+    border: 1px lightgray solid;
+    text-align: center;
+}
+
+.carousel-bg {
+    background-image: url('/assets/background.png');
+    background-size: cover;
+    height: 590px;
+    width: 440px;
+    position: relative;
+}
+
+.carousel {
+    height: 423px;
+    width: 241px;
+    position: absolute;
+    top: 46px;
+    left: 71px;
+
+}
+
+@media only screen and (max-width: 800px) {
+    .login-card {
+        width: 80%;
+    }
+    .footer-card {
+        width: 80%;
+    }
+    .carousel-bg{
+        display: none;
+    }
+}

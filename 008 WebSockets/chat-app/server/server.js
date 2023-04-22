@@ -9,13 +9,21 @@ const PORT = process.env.PORT ||  '3000';
 
 const app = express();
 const server = http.createServer(app);
-app.use(express.static(PUBLIC_PATH)); 
+
+let username, room;
+app.get("/chat", (req, res, next) => {
+    username = req.query.name
+    room = req.query.room
+    express.static(PUBLIC_PATH, { extensions: ['html'] })(req, res, next);
+})
+
+app.use(express.static(PUBLIC_PATH, { extensions: ['html'] })); 
 
 const io = socketIO(server);
 io.on('connection', (socket) => {
     console.log(`User with id ${socket.id} connected`);
 
-    socket.emit('newMessage', generateMessage('admin', 'Welcome to the chatapp',))
+    socket.emit('newMessage', generateMessage('admin', `Welcome to the chatapp room`,))
 
     socket.broadcast.emit('newMessage', generateMessage('admin','New user joined'))
 

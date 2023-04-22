@@ -1,198 +1,179 @@
 import * as React from 'react';
+import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+import InputBase from '@mui/material/InputBase';
+import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
-import Image from 'next/image'
-import logo from '../assets/instagram.jpg'
+import Menu from '@mui/material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import MailIcon from '@mui/icons-material/Mail';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import HomeIcon from '@mui/icons-material/Home';
-import ExploreIcon from '@mui/icons-material/Explore';
-import { AuthContext } from '../context/auth';
-import Divider from '@mui/material/Divider';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
-import Router, { useRouter } from 'next/router';
-import { Link } from '@mui/material';
-import SearchUsers from './SearchUsers';
+import Image from 'next/image';
+import { CssBaseline } from "@mui/material";
+import Avatar from '@mui/material/Avatar';
+import { AuthContext } from '../context/AuthContext';
+import { Router, useRouter } from 'next/router';
 
-const settings = ['Profile', 'Logout'];
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.black, 0.30),
+    '&:hover': {
+        backgroundColor: alpha(theme.palette.common.black, 0.50),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(3),
+        width: 'auto',
+    },
+}));
 
-const ResponsiveAppBar = ({ userData }) => {
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+}));
 
-    const { logout } = React.useContext(AuthContext);
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+        padding: theme.spacing(1, 1, 1, 0),
+        // vertical padding + font size from searchIcon
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('md')]: {
+            width: '20ch',
+        },
+    },
+}));
+
+
+function Navbar() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const isMenuOpen = Boolean(anchorEl);
+
+    const { logout } = React.useContext(AuthContext)
     const router = useRouter();
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
+    const handleProfileMenuOpen = (event) => {
+        setAnchorEl(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
+    const handleMenuClose = () => {
+        setAnchorEl(null);
     };
 
     const handleLogout = async () => {
+        handleMenuClose();
         await logout();
-        router.push('/login');
+        router.push('/login')
     }
-    const redirectToProfile = () => {
-        router.push('/profile');
+
+    const handleHomeClick = () => {
+        router.push('/')
     }
-    const redirectToHome = () => {
-        router.push('/');
+
+    const handleProfileClick = () => {
+        router.push('/profile')
     }
+
+    const menuId = 'primary-search-account-menu';
+    const menuItems = [
+        { text: 'Profile', onClickMethod: handleProfileClick },
+        { text: 'My account', onClickMethod: handleMenuClose },
+        { text: 'Logout', onClickMethod: handleLogout }
+    ];
+    const renderMenu = (
+        <Menu
+            anchorEl={anchorEl}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            id={menuId}
+            keepMounted
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            open={isMenuOpen}
+            onClose={handleMenuClose}
+        >
+            {menuItems.map((item, idx) => {
+                return (
+                    <MenuItem key={idx} onClick={item.onClickMethod}>{item.text}</MenuItem>
+                )
+            })}
+        </Menu>
+    );
+
     return (
-        <AppBar style={{ background: 'white' }} position="static" className="navbar">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: 'flex', md: 'flex' } }}
-                    >
-                        <Image src={logo} height={55} width={200} />
-                    </Typography>
+        <Box sx={{ flexGrow: 1 }} className='navbar-container'>
+            <CssBaseline />
+            <AppBar position="static" sx={{ bgcolor: 'white', padding: '0.1rem' }}>
+                <Toolbar>
+                    <Image src='/assets/instagram.jpg' className='instagram-logo' width={180} height={55} alt='logo' priority={1} />
+                    <Image src='/assets/instagram_icon.jpg' className='instagram-icon' width={55} height={55} alt='logo' />
+                    <Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Box>
+                        <IconButton size="large" aria-label="home page" color="inherit"
+                            onClick={handleHomeClick}>
+                            <HomeIcon style={{ fill: 'black' }} />
+                        </IconButton>
 
-                    {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-        >            
-          </Typography> */}
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, flexDirection: 'row', justifyContent: 'center' }}>
-                        <SearchUsers />
-                    </Box>
-
-                    <Box sx={{ flexGrow: 0 }} className="nav-icons-container">
-                        <HomeIcon fontSize='large' className='nav-icons' onClick={redirectToHome} />
-                        <ExploreIcon fontSize='large' className='nav-icons' />
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-                                <Avatar alt={userData?.name} src={userData?.photoURL} sx={{ width: 56, height: 56, margin: "0.75rem" }} />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            anchorEl={anchorElUser}
-                            id="account-menu"
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                            onClick={handleCloseUserMenu}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            PaperProps={{
-                                elevation: 0,
-                                sx: {
-                                    overflow: 'visible',
-                                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                    mt: '4rem',
-                                    ml: '-1.5rem',
-                                    '& .MuiAvatar-root': {
-                                        width: 32,
-                                        height: 32,
-                                        ml: -0.5,
-                                        mr: 1,
-                                    },
-                                    '&:before': {
-                                        content: '""',
-                                        display: 'block',
-                                        position: 'absolute',
-                                        top: 0,
-                                        right: 20,
-                                        width: 10,
-                                        height: 10,
-                                        bgcolor: 'background.paper',
-                                        transform: 'translateY(-50%) rotate(45deg)',
-                                        zIndex: 0,
-                                    },
-                                },
-                            }}
+                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                            <Badge badgeContent={4} color="error">
+                                <MailIcon style={{ fill: 'black' }} />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            aria-label="show 17 new notifications"
+                            color="inherit"
                         >
-                            <MenuItem onClick={redirectToProfile}>
-                                <Avatar />Profile
-                            </MenuItem>
-                            <MenuItem>
-                                <Avatar /> My account
-                            </MenuItem>
-                            <Divider />
-                            <MenuItem>
-                                <ListItemIcon>
-                                    <PersonAdd fontSize="small" />
-                                </ListItemIcon>
-                                Add another account
-                            </MenuItem>
-                            <MenuItem>
-                                <ListItemIcon>
-                                    <Settings fontSize="small" />
-                                </ListItemIcon>
-                                Settings
-                            </MenuItem>
-                            <MenuItem onClick={() => {
-                                handleLogout()
-                            }}>
-                                <ListItemIcon>
-                                    <Logout fontSize="small" />
-                                </ListItemIcon>
-                                Logout
-                            </MenuItem>
-                        </Menu>
-                        {/* <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
+                            <Badge badgeContent={17} color="error">
+                                <NotificationsIcon style={{ fill: 'black' }} />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                            aria-controls={menuId}
+                            aria-haspopup="true"
+                            onClick={handleProfileMenuOpen}
+                            color="inherit"
                         >
-                            {                                
-                                settings.map((setting) => (                                
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                                ))
-                                
-                            }
-                        </Menu> */}
+                            <Avatar alt="Vasu Bansal" src="/assets/default_dp.png" />
+                        </IconButton>
                     </Box>
                 </Toolbar>
-            </Container>
-        </AppBar>
+            </AppBar>
+            {renderMenu}
+        </Box>
     );
-};
-export default ResponsiveAppBar;
+}
+
+export default Navbar

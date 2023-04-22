@@ -1,24 +1,30 @@
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { useRouter } from 'next/router';
-import React, { useContext, useState } from 'react'
-import ProfileComp from '../../components/profileComp'
-import { AuthContext } from '../../context/auth';
-import { auth } from '../../firebase';
+import ProfileComponent from '../../components/ProfileComponent';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Profile() {
 
-  const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
 
-  const Redirect = () => {
-    const router = useRouter();
-    router.push('/login');
-    return null;
-  }
+    if(loading) {
+        return <div>
+            <CircularProgress style={{marginLeft: '50vw', marginTop: '50vh'}}/>
+        </div>;
+    }
 
-  return (
-    <div>      
-      {
-        user?.uid ? <ProfileComp /> : <Redirect />
-      }
-    </div>
-  )
+    const Redirect = () => {
+        const router = useRouter();
+        router.push('/login');
+        return null;
+    }
+
+    return (
+        <div>
+            {
+                user?.uid ? <ProfileComponent /> : <Redirect />
+            }
+        </div>
+    )
 }
