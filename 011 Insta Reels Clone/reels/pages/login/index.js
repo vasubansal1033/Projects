@@ -21,7 +21,7 @@ function Login() {
     try {
       setLoading(true); setError('');
       await login(email, password);
-      console.log("Login successfull");
+      // console.log("Login successfull");
     } catch (err) {
       setError(err.message);
       setTimeout(() => {
@@ -34,12 +34,12 @@ function Login() {
   const router = useRouter();
   useEffect(() => {
     if (user) {
-      console.log("user logged in");
+      // console.log("user logged in");
       router.push('/');
     } else {
-      console.log("User not logged in!");
+      // console.log("User not logged in!");
     }
-  }, [user]);
+  }, [user, router]);
 
   return (
     <div className="login-container">

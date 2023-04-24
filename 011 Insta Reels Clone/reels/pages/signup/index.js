@@ -22,7 +22,7 @@ function Signup() {
     if (user) {
       router.push('/');
     } else {
-      console.log("User not logged in!");
+      // console.log("User not logged in!");
     }
   }, [user]);
 
@@ -30,10 +30,16 @@ function Signup() {
     try {
       setLoading(true); setError('');
       const newUser = await signUp(email, password);
-      console.log(newUser.user.uid);
-      await uploadFileToCloudStorage(`${newUser.user.uid}/profile_picture`, username, email, newUser.user.uid, file)
+      // console.log(newUser.user.uid);
+      const obj = {
+        name: username,
+        email: email,
+        uid: newUser.user.uid,
+        posts: []
+      }
+      await uploadFileToCloudStorage("users", `${newUser.user.uid}/profile_picture`, obj, file)
 
-      console.log("Signup successfull");
+      // console.log("Signup successfull");
     } catch (err) {
       setError(err.message);
       setTimeout(() => {

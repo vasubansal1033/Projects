@@ -60,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-function Navbar() {
+function Navbar({ userData }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
@@ -166,7 +166,7 @@ function Navbar() {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <Avatar alt="Vasu Bansal" src="/assets/default_dp.png" />
+                            <Avatar alt="Vasu Bansal" src={userData?.photoURL} />
                         </IconButton>
                     </Box>
                 </Toolbar>

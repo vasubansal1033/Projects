@@ -19,7 +19,7 @@ function ForgotPassword() {
             setLoading(true); setError('');
 
             await forgotPassword(email);
-            console.log("Email sent");
+            // console.log("Email sent");
             router.push('/login');
         } catch (err) {
             setError(err.message);

@@ -5,6 +5,8 @@ import '@/styles/navbar.css'
 import '@/styles/feed.css'
 import '@/styles/videos.css'
 import '@/styles/profile.css'
+import '@/styles/upload.css'
+import '@/styles/postModal.css'
 import AuthWrapper from '../backend/AuthWrapper'
 
 export default function App({ Component, pageProps }) {

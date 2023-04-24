@@ -3,18 +3,23 @@
     height: 70vh;
     border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #888888;
+    background-color: lightgray;
+
+    /* Add scroll bar to videos-container */
     overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .post-container {
     height: 70vh;
     width: 50vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    border-radius: 10px;
     position: relative;
 }
 
-.post-container::-webkit-scrollbar {
+.videos-container::-webkit-scrollbar {
     display: none;
 }
 

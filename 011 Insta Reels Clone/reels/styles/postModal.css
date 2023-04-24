@@ -1,0 +1,116 @@
+.modal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-video-container {
+    background-color: rgba(245, 197, 197, 0.945);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.modal-video-container > video {
+    height: 300px;
+    width: 400px;
+}
+
+.comment-container {
+    height: 100%;
+    width: 100%;
+
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-post-info-icons {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.modal-post-info {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+}
+.comment-card {
+    max-height: 45vh;
+    overflow: auto;
+}
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.comment-card-list {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.comment-card-list::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+    overflow-x: hidden;
+}
+
+.comment-card-list::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.comment-card-list::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #afafaf;
+}
+
+.comment-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.comment-text span {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.comment-text p {
+    font-size: 0.75rem;
+    word-break: break-all;
+    white-space: normal;
+}
+.eachCommentContainer {
+    width: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(229, 236, 234);
+    padding: 0.2rem;
+    border-radius: 1rem;
+}
+
+.css-46bh2p-MuiCardContent-root {
+    padding: 2px
+}
